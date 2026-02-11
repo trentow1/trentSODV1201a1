@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="staff.js"></script>
+    <script defer src="footer.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Staff Directory</h1>
+    <nav>
+        <a href="index.html">Profile</a>
+        <a href="grade.html">Grade Converter</a>
+        <a href="staff.html">Staff</a>
+        <a href="temp.html">Temperature</a>
+    </nav>
+</header>
+
+<main>
+    <button onclick="sortByName()">Sort by Name</button>
+    <button onclick="sortBySalary()">Sort by Salary</button>
+
+    <div class="table-wrapper">
+    <table id="staffTable">
+    <thead>
+        <tr>
+            <th onclick="sortByName()">
+                Name <span id="nameArrow"></span>
+            </th>
+            <th>Position</th>
+            <th>Location</th>
+            <th onclick="sortBySalary()">
+                Salary <span id="salaryArrow"></span>
+            </th>
+        </tr>
+    </thead>
+    <tbody id="staffBody"></tbody>
+</table>
+</div>
+
+
+</main>
+
+<footer>
+    <span id="footerText"></span>
+</footer>
+
+</body>
+</html>

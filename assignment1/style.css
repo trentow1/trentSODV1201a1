@@ -1,0 +1,133 @@
+/* Reset + box sizing for consistent layouts */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Make the page take full viewport height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Flex layout for the whole page */
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    font-size: clamp(14px, 1.2vw, 16px);
+}
+
+/* Main content grows to push footer down */
+main {
+    flex: 1;
+    padding: clamp(12px, 4vw, 20px);
+}
+
+/* Header and footer styling */
+header, footer {
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Navigation styling */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+    text-decoration: underline;
+}
+
+/* Table wrapper handles responsiveness */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Base table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* prevents column squish on tablets */
+}
+
+/* Cells */
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* Header styling */
+th {
+    background-color: #f4f4f4;
+    cursor: pointer;
+    user-select: none;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+th:hover {
+    background-color: #ddd;
+}
+
+th span {
+    margin-left: 5px;
+    font-size: 0.9em;
+}
+
+/* Zebra striping for readability */
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Desktop enhancement */
+@media (min-width: 900px) {
+    table {
+        min-width: 100%;
+    }
+
+    th, td {
+        white-space: normal; /* allow wrapping on large screens */
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 600px) {
+    th, td {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
+
+#profilePic {
+    width: clamp(120px, 30vw, 220px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 2rem auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* When the hidden attribute is removed */
+#profilePic:not([hidden]) {
+    opacity: 1;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="temp.js"></script>
+    <script defer src="footer.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Temperature Converter</h1>
+    <nav>
+        <a href="index.html">Profile</a>
+        <a href="grade.html">Grade Converter</a>
+        <a href="staff.html">Staff</a>
+        <a href="temp.html">Temperature</a>
+    </nav>
+</header>
+
+<main>
+    <input
+        type="number"
+        id="tempValue"
+        placeholder="Enter temperature"
+        oninput="convertTemp()">
+
+    <select id="tempType" onchange="convertTemp()">
+       <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        <option value="K">Kelvin</option>
+    </select>
+
+    <p id="output"></p>
+</main>
+
+<footer>
+    <span id="footerText"></span>
+</footer>
+
+</body>
+</html>
